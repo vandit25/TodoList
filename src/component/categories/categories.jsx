@@ -3,19 +3,20 @@ import'./categories.css'
 import { useState } from 'react'
 import CreateCategories from '../createCategories/CreateCategories'
 
-function Categories({categories, setCategories}) {
+function Categories({categories, setCategories, setColorCategory}) {
   const [showCreateCategories, setShowCreateCategories] = useState(false)
+  const [color, setColor] = useState("");
+  
   function handleClick() {
     setShowCreateCategories(true)
+    
   }
-  function getData(text, prop){
-    if(text !== ""){
+  function getData(text){
+    if(text !== "" && !categories.includes(text)){
       setCategories([...categories, text])
-      setShowCreateCategories(prop)
+      setColorCategory(prev => ({...prev, [text]: color}))
+      setShowCreateCategories(false)
     }
-  }
-  function closeInput(prop){
-    setShowCreateCategories(prop)
   }
   return (
     <div className='categories'>
@@ -28,9 +29,9 @@ function Categories({categories, setCategories}) {
         </ul>
       </div>
       <button className='add-category' onClick={handleClick}>+ New category</button>
-      {showCreateCategories ? <CreateCategories text={getData} setInput={closeInput} /> : null}  
+      {showCreateCategories ? <CreateCategories text={getData} closeCreateCategory={setShowCreateCategories} changeColor={setColor} /> : null}  
     </div>
   )
-}
+} 
 
 export default Categories

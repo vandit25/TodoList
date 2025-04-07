@@ -2,17 +2,21 @@ import React from 'react'
 import './createCategories.css'
 import { useState } from 'react'
 
-function CreateCategories({text, setInput}) {
+function CreateCategories({text, closeCreateCategory, changeColor}) {
     const [input, setinput] = useState("")
     
     function handleClick() {
       if(input.trim() !== ""){
-        text(input, false)
+        text(input)
+        changeColor("#" + Math.floor(Math.random() * 0xFFFF).toString(16))
+        console.log(changeColor);
+        setinput("")
+      }else{
         setinput("")
       }
     }
     function handleClose(){
-      setInput(false)
+      closeCreateCategory(false)
     }
   return (
     <div className='body'>
