@@ -5,3 +5,6 @@
 h1{
     font-size: 50px;
 }
+body{
+    overflow: hidden;
+}

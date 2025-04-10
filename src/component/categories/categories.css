@@ -14,7 +14,9 @@ body{
 .category-head{
     margin-top: 100px;
     font-size: 30px;
-
+    background-color: red;
+    border-radius: 20px;
+    padding: 10px;
 }
 li{
     font-size: 30px;

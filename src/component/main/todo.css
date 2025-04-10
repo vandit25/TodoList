@@ -1,4 +1,8 @@
+body{
+    
+}
 .todo-contener{
+    width: 100%;
     margin-left: 38px;
     display: flex;
     flex-direction: column;
@@ -32,6 +36,7 @@
     display: flex;
     align-items: center;
     border-radius: 10px;
+    
 }
 
 .input-contaner{
@@ -39,8 +44,11 @@
     justify-content: center;
     align-items: center;
 }
-.list-conaner{
+.list-container{
     margin-top: 68.40px;
+    width: 100%;
+    height: 400px;
+    overflow-y: scroll;
 }
 .type{
 

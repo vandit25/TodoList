@@ -7,13 +7,14 @@ function CreateCategories({text, closeCreateCategory, changeColor}) {
     
     function handleClick() {
       if(input.trim() !== ""){
-        text(input)
-        changeColor("#" + Math.floor(Math.random() * 0xFFFF).toString(16))
-        console.log(changeColor);
+        const rendomColor = "#" + Math.floor(Math.random() * 0xFFFF).toString(16)
+        changeColor(rendomColor)
+        text(input) 
         setinput("")
       }else{
         setinput("")
       }
+  
     }
     function handleClose(){
       closeCreateCategory(false)
@@ -25,8 +26,8 @@ function CreateCategories({text, closeCreateCategory, changeColor}) {
             <h1 className='category-title'>Add Categories</h1>
             <button className='btn-x' onClick={handleClose}>X</button>
           </div>
-            <input className='input' type='text' placeholder='Enter Category' value={input} onChange={(e) => setinput(e.target.value)}/>
-            <button className='btn-add' onClick={handleClick}>Add</button>
+            <input className='input' type='text' placeholder='Enter Category' value={input} onChange={(e) => setinput(e.target.value)}  />
+            <button className='btn-add' onClick={handleClick} style={input === "" ? {backgroundColor: "lightgray"}: {}}>Add</button>
         </div>
     </div>
   )
