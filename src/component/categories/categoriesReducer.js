@@ -11,9 +11,11 @@ export const categoriesSlice = createSlice({
     reducers: {
         addCategory: (state, action) => {
             const {name, color} = action.payload
-            if(name !== "" && !state.categories.includes(name)){
+            if(name !== "" && !state.categories.includes(name.trim())){
                 state.categories.push(name)
                 state.colorCategory[name] = color;
+            }else{
+                alert("Given Category is already added")
             }
         },
     }

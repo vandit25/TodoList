@@ -21,10 +21,12 @@ function Categories({setClickedCategory}) {
     dispatch(addCategory({name:text, color}))
     setShowCreateCategories(false)
   }
+
   function handleClickedCategory(index){
     setActiveCategory(index)
   }
-  return (
+
+  return(
     <div className='categories'>
       <h4 className='category-head' onClick={() => {setClickedCategory(""); handleClickedCategory(null)}} style={{backgroundColor: activeCategory === null ? "red" : "white"}}>All Tasks</h4>
       <div className='list-contaner'>
@@ -36,6 +38,6 @@ function Categories({setClickedCategory}) {
       {showCreateCategories ? <CreateCategories text={getData} closeCreateCategory={setShowCreateCategories} changeColor={setColor} /> : null}  
     </div>
   )
-} 
+}
 
 export default Categories

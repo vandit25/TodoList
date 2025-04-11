@@ -8,8 +8,10 @@ function App() {
   const [clickedCategory, setClickedCategory] = useState("")
   return (
     <>
-      <Categories setClickedCategory={setClickedCategory}/>
-      <Todo clickedCategory={clickedCategory} />
+      <div className='main-container'>
+        <Categories setClickedCategory={setClickedCategory}/>
+        <Todo clickedCategory={clickedCategory} />
+      </div>
     </>
   );
 }
