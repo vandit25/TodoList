@@ -38,8 +38,8 @@ function Todo({clickedCategory}) {
     <div className='todo-contener'>
       <h1>All Tasks</h1>
       <div className='input-contaner'>
-        <input className='input-todo' type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Add a new task' maxLength={50}/><br></br>
-        <select className='drop-down' id="dropdown" onClick={(e) =>  setCategory(e.target.value)} placeholder="Select"  >
+        <input className='input-todo' type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Add a new task'/><br></br>
+        <select className='drop-down' id="dropdown" title={category} onClick={(e) =>  setCategory(e.target.value)}>
           <option value="" hidden >Select</option>
            {categories.length < 1 && <option value="" disabled>Add Categories</option>}
           {categories.map((category, index) => {return(<option className='category-list' value={category} key={index}>{category}</option>)})} 
@@ -47,8 +47,8 @@ function Todo({clickedCategory}) {
         <button className='enter-btn' style={input === "" ||  category === "" ? {backgroundColor: "lightgray"} : {}} onClick={dropdown}>Enter</button>
       </div>  
       <div className='list-container'> {list.filter((item) => !clickedCategory || item.category === clickedCategory).map((item, index) =>(<div key={index} className='list'><input className='check' type='checkbox' checked={isClicked[index]} onChange={() => togaleCheck(index)}/>
-            {handleCheck(isClicked[index], item.task)}
-            <p className='type' style={{backgroundColor: colorCategories[item.category?.trim()] || "gray"}}>{item.category}</p>
+            <div className='list-items' title={item.task}>{handleCheck(isClicked[index], item.task)}</div>
+            <p className='type' title={item.category} style={{backgroundColor: colorCategories[item.category?.trim()] || "gray"}}>{item.category}</p>
         </div>))}
       </div>
     </div>

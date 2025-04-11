@@ -26,7 +26,7 @@ function CreateCategories({text, closeCreateCategory, changeColor}) {
             <h1 className='category-title'>Add Categories</h1>
             <button className='btn-x' onClick={handleClose}>X</button>
           </div>
-            <input className='input' type='text' placeholder='Enter Category' value={input} onChange={(e) => setinput(e.target.value)} maxLength="10"/>
+            <input className='input' type='text' placeholder='Enter Category' value={input} onChange={(e) => setinput(e.target.value)}/>
             <button className='btn-add' onClick={handleClick} style={input === "" ? {backgroundColor: "lightgray"}: {}}>Add</button>
         </div>
     </div>

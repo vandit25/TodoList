@@ -4,7 +4,8 @@ body {
 }
 .categories {
   height: 100vh;
-  width: 440px;
+  width: 100%;
+  max-width: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,20 +14,20 @@ body {
 }
 .category-head {
   margin-top: 100px;
-  font-size: 30px;
+  font-size: 24px;
   background-color: red;
   border-radius: 20px;
   padding: 10px;
 }
 li {
-  font-size: 30px;
+  font-size: 20px;
   list-style-type: none;
 }
 
 .add-category {
   background-color: transparent;
   color: #6447ee;
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   margin-top: 20px;
 }
@@ -34,10 +35,13 @@ li {
   background-color: #6447ee;
   border-radius: 10px;
   padding: 0px;
+  width: 100%;
+  max-width: 150px;
   height: auto;
   max-height: 50vh;
-  overflow-y: auto;
-  scrollbar-width: none; 
+  overflow: auto;
+  scrollbar-width: none;
+
 }
 .list-contaner {
   display: flex;
@@ -45,26 +49,51 @@ li {
   justify-content: center;
   margin-left: 0;
 }
-.category {
-  margin: 20px;
+.category{
+  margin: 10px;
   border-radius: 10px;
+  max-width: 160px;
   padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .clicked-category {
-  padding: 5px;
   border-radius: 10px;
   background-color: lightblue;
 }
+@media only screen and (max-width: 600px) {
+  .category-lists{
+    width: 140px;
+  }
+  .category{
+    width: 100px;
+    font-size: 20px;
+  }
+  .add-category{
+    font-size: 25px;
+  }
+  .category-head{
+    font-size: 25px;
+  }
+}
 @media only screen and (max-width: 400px) {
   .category {
+    width: 20vw;
     font-size: 20px;
     padding: 5px;
     margin: 10px;
+  }
+  .list-contaner{
+    width: 30vw;
   }
   .add-category {
     font-size: 20px;
   }
   .category-head{
     font-size: 20px;
+  }
+  .categories{
+    width: 200px;
   }
 }

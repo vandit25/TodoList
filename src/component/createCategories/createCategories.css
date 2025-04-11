@@ -8,21 +8,19 @@
     align-items: center;
 }
 .create-categories-container{
-    height: 400px;
-    width: 60vw;
+    height: 300px;
+    width: 50vw;
     background-color: #c0c4c4;
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-
-
 }
 .input{
-    font-size: 30px;
+    font-size: 24px;
     padding-left: 10px;
     margin: 50px;
     width: 70%;
-    height: 50px;
+    height: 40px;
     border-radius: 10px;
 }
 .btn-x{
@@ -66,5 +64,4 @@
         display: flex;
         flex-wrap: wrap;
     }
-    .
 }

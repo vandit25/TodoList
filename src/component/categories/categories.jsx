@@ -31,7 +31,7 @@ function Categories({setClickedCategory}) {
       <h4 className='category-head' onClick={() => {setClickedCategory(""); handleClickedCategory(null)}} style={{backgroundColor: activeCategory === null ? "red" : "white"}}>All Tasks</h4>
       <div className='list-contaner'>
         <ul className='category-lists'>
-          {categories.map((category, index) => (<li onClick={() => {setClickedCategory(categories[index]); handleClickedCategory(index)}} className='category' key={index} style={{backgroundColor: activeCategory === index && activeCategory !== null ? "lightblue"  : "#6447ee"}}>{category}</li>))}
+          {categories.map((category, index) => (<li onClick={() => {setClickedCategory(categories[index]); handleClickedCategory(index)}} title={category} className='category' key={index} style={{backgroundColor: activeCategory === index && activeCategory !== null ? "lightblue"  : "#6447ee"}}>{category}</li>))}
         </ul>
       </div>
       <button className='add-category' onClick={handleClick}>+ New category</button>
