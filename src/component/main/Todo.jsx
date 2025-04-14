@@ -35,7 +35,7 @@ function Todo({clickedCategory}) {
       return clicked ? (<del style={{color: "red"}}>{list}</del>) : list
     }
   return (
-    <div className='todo-contener'>
+    <div className='todo-container'>
       <h1>All Tasks</h1>
       <div className='input-contaner'>
         <input className='input-todo' type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder='Add a new task'/><br></br>
@@ -45,7 +45,7 @@ function Todo({clickedCategory}) {
           {categories.map((category, index) => {return(<option className='category-list' value={category} key={index}>{category}</option>)})} 
         </select>
         <button className='enter-btn' style={input === "" ||  category === "" ? {backgroundColor: "lightgray"} : {}} onClick={dropdown}>Enter</button>
-      </div>  
+      </div>
       <div className='list-container'> {list.filter((item) => !clickedCategory || item.category === clickedCategory).map((item, index) =>(<div key={index} className='list'><input className='check' type='checkbox' checked={isClicked[index]} onChange={() => togaleCheck(index)}/>
             <div className='list-items' title={item.task}>{handleCheck(isClicked[index], item.task)}</div>
             <p className='type' title={item.category} style={{backgroundColor: colorCategories[item.category?.trim()] || "gray"}}>{item.category}</p>

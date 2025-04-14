@@ -1,4 +1,4 @@
-.todo-contener {
+.todo-container {
   width: 100%;
   margin-left: 38px;
   display: flex;
@@ -21,6 +21,13 @@ h1{
   margin-right: 30px;
 }
 #dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right  center;
+    background-size: 20px;
     padding: 5px;
     font-size: 15px;
     border-radius: 10px;
@@ -30,11 +37,9 @@ h1{
     max-width: 80px;
     white-space: nowrap;
     overflow: hidden;
+    padding-right: 10px;
     text-overflow: ellipsis;
     text-align: center;
-}
-option{
-    padding: 10px;
 }
 .check {
   height: 20px;
