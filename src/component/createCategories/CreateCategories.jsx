@@ -1,7 +1,6 @@
 import React from 'react'
 import './createCategories.css'
 import { useState } from 'react'
-
 function CreateCategories({text, closeCreateCategory, changeColor}) {
     const [input, setinput] = useState("")
     
@@ -14,7 +13,6 @@ function CreateCategories({text, closeCreateCategory, changeColor}) {
       }else{
         setinput("")
       }
-  
     }
     function handleClose(){
       closeCreateCategory(false)

@@ -1,15 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
+import { CategoriesContext } from '../../context/CategoriesContext';
 import './todo.css'
-import { useSelector } from 'react-redux';
-function Todo({clickedCategory}) {
+function Todo() {
     const [input, setInput] = useState("");
     const [list, setList] = useState([])
     const [isClicked, setIsClicked] = useState([])
     const [category, setCategory] = useState("")
-    const categories = useSelector(state => state.categories.categories)
-    const colorCategories = useSelector(state => state.categories.colorCategory)
-
+    const {categories, colorCategory, clickedCategory} = useContext(CategoriesContext)
     function addList(){
       if(input.trim() !== ""){
         setList([...list, {task: input, category: category}])
@@ -25,8 +23,8 @@ function Todo({clickedCategory}) {
 
     function dropdown(){
       if(category.trim() !== ""){
-        addList()
-        setInput("")
+        addList();
+        setInput("");
         setCategory("");
         document.getElementById("dropdown").value = "";
       }
@@ -48,7 +46,7 @@ function Todo({clickedCategory}) {
       </div>
       <div className='list-container'> {list.filter((item) => !clickedCategory || item.category === clickedCategory).map((item, index) =>(<div key={index} className='list'><input className='check' type='checkbox' checked={isClicked[index]} onChange={() => togaleCheck(index)}/>
             <div className='list-items' title={item.task}>{handleCheck(isClicked[index], item.task)}</div>
-            <p className='type' title={item.category} style={{backgroundColor: colorCategories[item.category?.trim()] || "gray"}}>{item.category}</p>
+            <p className='type' title={item.category} style={{backgroundColor: colorCategory[item.category?.trim()] || "gray"}}>{item.category}</p>
         </div>))}
       </div>
     </div>

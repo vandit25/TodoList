@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     categories: [],
     colorCategory: {},
+    clickedCategory: "",
 };
 
 export const categoriesSlice = createSlice({

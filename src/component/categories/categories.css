@@ -15,7 +15,7 @@ body {
 .category-head {
   margin-top: 100px;
   font-size: 24px;
-  background-color: red;
+  background-color: #98ff98;
   border-radius: 20px;
   padding: 10px;
 }
@@ -41,7 +41,6 @@ li {
   max-height: 50vh;
   overflow: auto;
   scrollbar-width: none;
-
 }
 .list-contaner {
   display: flex;
@@ -49,7 +48,7 @@ li {
   justify-content: center;
   margin-left: 0;
 }
-.category{
+.category {
   margin: 10px;
   border-radius: 10px;
   max-width: 160px;
@@ -63,17 +62,17 @@ li {
   background-color: lightblue;
 }
 @media only screen and (max-width: 600px) {
-  .category-lists{
+  .category-lists {
     width: 140px;
   }
-  .category{
+  .category {
     width: 100px;
     font-size: 20px;
   }
-  .add-category{
+  .add-category {
     font-size: 25px;
   }
-  .category-head{
+  .category-head {
     font-size: 25px;
   }
 }
@@ -84,16 +83,16 @@ li {
     padding: 5px;
     margin: 10px;
   }
-  .list-contaner{
+  .list-contaner {
     width: 30vw;
   }
   .add-category {
     font-size: 20px;
   }
-  .category-head{
+  .category-head {
     font-size: 20px;
   }
-  .categories{
+  .categories {
     width: 200px;
   }
 }

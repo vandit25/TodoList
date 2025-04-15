@@ -5,12 +5,11 @@ import './App.css'
 import { useState } from 'react'
 
 function App() {
-  const [clickedCategory, setClickedCategory] = useState("")
   return (
     <>
       <div className='main-container'>
-        <Categories setClickedCategory={setClickedCategory}/>
-        <Todo clickedCategory={clickedCategory} />
+        <Categories />
+        <Todo/>
       </div>
     </>
   );
